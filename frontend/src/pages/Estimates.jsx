@@ -889,7 +889,7 @@ export default function Estimates() {
                 <th className="text-right py-2 px-2 w-24 print:hidden">Rate ₹</th>
                 <th className="text-right py-2 px-2 w-24 print:hidden">Disc.</th>
                 <th className="text-right py-2 px-2 w-24">Net ₹</th>
-                <th className="text-right py-2 px-2 w-28">Line ₹</th>
+                <th className="text-right py-2 px-2 w-28 print:pr-8">Line ₹</th>
               </tr>
             </thead>
             <tbody>
@@ -920,7 +920,7 @@ export default function Estimates() {
                   <td className="py-2 px-2 text-right tabular-nums font-mono">
                     {l.net_unit_price.toFixed(2)}
                   </td>
-                  <td className="py-2 px-2 text-right tabular-nums font-mono font-bold text-slate-900">
+                  <td className="py-2 px-2 text-right tabular-nums font-mono font-bold text-slate-900 print:pr-8">
                     {l.line_value.toFixed(2)}
                   </td>
                 </tr>
@@ -932,7 +932,7 @@ export default function Estimates() {
                   Line total
                 </td>
                 <td
-                  className="py-2 px-2 text-right tabular-nums font-mono font-extrabold text-slate-900"
+                  className="py-2 px-2 text-right tabular-nums font-mono font-extrabold text-slate-900 print:pr-8"
                   data-testid="estimate-line-total"
                 >
                   ₹ {estimate.totals.line_total.toFixed(2)}
