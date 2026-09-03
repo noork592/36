@@ -928,7 +928,10 @@ export default function Estimates() {
             </tbody>
             <tfoot>
               <tr className="border-t-2 border-slate-800">
-                <td colSpan={5} className="py-2 px-2 text-right font-bold uppercase tracking-wider text-slate-800">
+                <td colSpan={2} className="py-2 px-2"></td>
+                <td className="py-2 px-2 print:hidden"></td>
+                <td className="py-2 px-2 print:hidden"></td>
+                <td className="py-2 px-2 text-right font-bold uppercase tracking-wider text-slate-800 whitespace-nowrap">
                   Line total
                 </td>
                 <td
