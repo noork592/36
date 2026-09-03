@@ -287,7 +287,7 @@ export default function Estimates() {
   return (
     <div className="space-y-5" data-testid="estimates-page">
       {/* Header */}
-      <div className="flex items-end justify-between flex-wrap gap-3">
+      <div className="flex items-end justify-between flex-wrap gap-3 print:hidden">
         <div>
           <div className="text-[10px] uppercase tracking-[0.15em] text-[#E65100] font-bold">
             Quotations

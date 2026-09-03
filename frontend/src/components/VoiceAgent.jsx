@@ -396,7 +396,7 @@ export default function VoiceAgent() {
         data-testid="voice-agent-fab"
         aria-label="Open AI voice assistant"
         title="AI Voice Assistant — bolkar command dein (English / हिंदी)"
-        className="fixed z-[60] bottom-[calc(6rem+env(safe-area-inset-bottom))] right-[calc(1.25rem+env(safe-area-inset-right))] sm:bottom-[calc(1.5rem+env(safe-area-inset-bottom))] sm:right-[calc(1.5rem+env(safe-area-inset-right))] h-14 pl-4 pr-5 rounded-full bg-[#E65100] hover:bg-[#CC4800] text-white shadow-lg flex items-center gap-2 transition-transform active:scale-95 group"
+        className="print:hidden fixed z-[60] bottom-[calc(6rem+env(safe-area-inset-bottom))] right-[calc(1.25rem+env(safe-area-inset-right))] sm:bottom-[calc(1.5rem+env(safe-area-inset-bottom))] sm:right-[calc(1.5rem+env(safe-area-inset-right))] h-14 pl-4 pr-5 rounded-full bg-[#E65100] hover:bg-[#CC4800] text-white shadow-lg flex items-center gap-2 transition-transform active:scale-95 group"
       >
         <Mic className="w-6 h-6" />
         <span className="flex flex-col items-start leading-none">
