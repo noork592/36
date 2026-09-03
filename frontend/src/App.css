@@ -7,8 +7,16 @@
    `.print-area` opt-in class on a page wrapper signals "this is what
    the user wants on paper". */
 @media print {
+  /* Remove the browser-injected header/footer (document title "JK Products"
+     on the left and the page URL on the right). These are rendered inside the
+     page margin box, so collapsing the @page margin to 0 hides them entirely.
+     Content spacing is restored via padding on the printed areas below. */
+  @page { size: auto; margin: 0 !important; }
+
   /* Reset browser defaults that interfere with PDF capture */
   html, body { background: #fff !important; margin: 0 !important; }
+  /* Give the estimate slip safe inner padding now that the page margin is 0 */
+  [data-testid="estimate-result"] { padding: 12mm !important; }
   /* Hide app chrome */
   aside, header { display: none !important; }
   /* Remove sidebar offset + main padding */
