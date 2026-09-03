@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Chivo:wght@400;500;600;700;800;900&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #F8FAFC;
+    color: #0F172A;
+}
+
+h1, h2, h3, h4, h5, h6, .font-heading {
+    font-family: 'Chivo', system-ui, sans-serif;
+    letter-spacing: -0.01em;
+}
+
+.font-mono-num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-variant-numeric: tabular-nums;
+}
+
+code {
+    font-family: 'IBM Plex Mono', Menlo, Monaco, monospace;
+}
+
+@layer base {
+    :root {
+        --background: 210 40% 98%;
+        --foreground: 222 47% 11%;
+        --card: 0 0% 100%;
+        --card-foreground: 222 47% 11%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 222 47% 11%;
+        --primary: 22 100% 45%;            /* Safety Orange #E65100 */
+        --primary-foreground: 0 0% 100%;
+        --secondary: 215 25% 17%;          /* Deep Slate #1E293B */
+        --secondary-foreground: 0 0% 100%;
+        --muted: 215 16% 92%;
+        --muted-foreground: 215 16% 35%;
+        --accent: 22 100% 96%;
+        --accent-foreground: 22 100% 30%;
+        --destructive: 0 72% 51%;
+        --destructive-foreground: 0 0% 100%;
+        --border: 215 18% 89%;
+        --input: 215 18% 89%;
+        --ring: 22 100% 45%;
+        --chart-1: 22 100% 45%;
+        --chart-2: 215 25% 17%;
+        --chart-3: 38 92% 50%;
+        --chart-4: 217 91% 49%;
+        --chart-5: 142 71% 38%;
+        --radius: 0.25rem;
+    }
+    .dark {
+        --background: 222 47% 8%;
+        --foreground: 0 0% 98%;
+        --card: 222 47% 11%;
+        --card-foreground: 0 0% 98%;
+        --popover: 222 47% 11%;
+        --popover-foreground: 0 0% 98%;
+        --primary: 22 100% 50%;
+        --primary-foreground: 0 0% 100%;
+        --secondary: 215 25% 20%;
+        --secondary-foreground: 0 0% 98%;
+        --muted: 215 25% 18%;
+        --muted-foreground: 215 16% 70%;
+        --accent: 22 100% 20%;
+        --accent-foreground: 0 0% 98%;
+        --destructive: 0 72% 50%;
+        --destructive-foreground: 0 0% 100%;
+        --border: 215 25% 22%;
+        --input: 215 25% 22%;
+        --ring: 22 100% 50%;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply bg-background text-foreground;
+    }
+}
+
+@layer components {
+    .stat-card {
+        @apply bg-white border border-[#E2E8F0] rounded-sm p-5 transition-colors duration-200;
+    }
+    .stat-card:hover {
+        @apply bg-[#FAFAFA];
+    }
+    .badge-status {
+        @apply inline-flex items-center gap-1 px-2 py-1 rounded-sm text-[10px] font-bold tracking-[0.08em] uppercase;
+    }
+    .badge-pending {
+        @apply bg-amber-100 text-amber-900;
+    }
+    .badge-dispatched {
+        @apply bg-blue-100 text-blue-900;
+    }
+    .badge-delivered {
+        @apply bg-green-100 text-green-900;
+    }
+    .badge-cleared {
+        @apply bg-slate-200 text-slate-700;
+    }
+    .pulse-ring {
+        animation: pulse-ring 1.4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+    @keyframes pulse-ring {
+        0%, 100% { box-shadow: 0 0 0 0 rgba(230, 81, 0, 0.55); }
+        50% { box-shadow: 0 0 0 14px rgba(230, 81, 0, 0); }
+    }
+    .number-pill {
+        @apply inline-flex items-center px-2 py-0.5 rounded-sm bg-slate-900 text-white font-mono-num text-sm;
+    }
+    /* Hide native number input spinners for "no-spinner" inputs */
+    .no-spinner::-webkit-outer-spin-button,
+    .no-spinner::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+    .no-spinner {
+        -moz-appearance: textfield;
+        appearance: textfield;
+    }
+}
+
+@layer base {
+    [data-debug-wrapper="true"] {
+        display: contents !important;
+    }
+    [data-debug-wrapper="true"] > * {
+        margin-left: inherit; margin-right: inherit; margin-top: inherit; margin-bottom: inherit;
+        padding-left: inherit; padding-right: inherit; padding-top: inherit; padding-bottom: inherit;
+        column-gap: inherit; row-gap: inherit; gap: inherit;
+    }
+}
