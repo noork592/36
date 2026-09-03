@@ -884,7 +884,7 @@ export default function Estimates() {
           <table className="w-full text-sm">
             <thead>
               <tr className="border-b-2 border-slate-800 text-[11px] uppercase tracking-wider text-slate-700">
-                <th className="text-left py-2 px-2">Item</th>
+                <th className="text-left py-2 px-2 w-full">Item</th>
                 <th className="text-right py-2 px-2 w-16">Qty</th>
                 <th className="text-right py-2 px-2 w-24 print:hidden">Rate ₹</th>
                 <th className="text-right py-2 px-2 w-24 print:hidden">Disc.</th>
